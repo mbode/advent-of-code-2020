@@ -1,4 +1,4 @@
-pub fn day_1_1(numbers: &Vec<i32>) -> Option<i32> {
+pub fn day_1_1(numbers: &[isize]) -> Option<isize> {
     for i in numbers {
         for j in numbers {
             if i + j == 2020 {
@@ -9,7 +9,7 @@ pub fn day_1_1(numbers: &Vec<i32>) -> Option<i32> {
     None
 }
 
-pub fn day_1_2(numbers: &Vec<i32>) -> Option<i32> {
+pub fn day_1_2(numbers: &[isize]) -> Option<isize> {
     for i in numbers {
         for j in numbers {
             for k in numbers {
@@ -26,14 +26,17 @@ pub fn day_1_2(numbers: &Vec<i32>) -> Option<i32> {
 mod tests {
     use crate::day_1::{day_1_1, day_1_2};
 
-    #[test]
-    fn test_day_1_1() {
-        let entries = vec!(1721, 979, 366, 299, 675, 1456);
-        assert_eq!(day_1_1(&entries).unwrap(), 514579);
+    fn test_data() -> Vec<isize> {
+        vec!(1721, 979, 366, 299, 675, 1456)
     }
 
+    #[test]
+    fn test_day_1_1() {
+        assert_eq!(day_1_1(&test_data()).unwrap(), 514579);
+    }
+
+    #[test]
     fn test_day_1_2() {
-        let entries = vec!(1721, 979, 366, 299, 675, 1456);
-        assert_eq!(day_1_2(&entries).unwrap(), 514579);
+        assert_eq!(day_1_2(&test_data()).unwrap(), 241861950);
     }
 }

@@ -1,25 +1,23 @@
 mod day_1;
+mod day_2;
+mod input;
 
-use std::fs::File;
-use std::io::{BufReader, BufRead, Error, ErrorKind};
+use std::io::Error;
+
 
 fn main() -> Result<(), Error> {
-    let numbers = read_input("input/day_1")?;
+    let day_1 = input::read_numbers("input/day_1")?;
+    if let Some(i) = day_1::day_1_1(&day_1) {
+        println!("day_1_1: {}", i)
+    }
+    if let Some(i) = day_1::day_1_2(&day_1) {
+        println!("day_1_2: {}", i)
+    }
 
-    if let Some(i) = day_1::day_1_1(&numbers) {
-        println! {"Two: {}", i}
-    }
-    if let Some(i) = day_1::day_1_2(&numbers) {
-        println! {"Three: {}", i}
-    }
+
+    let day_2 = input::read_lines("input/day_2")?;
+    println! {"day_2_1: {}", day_2::day_2_1(&day_2)}
+    println! {"day_2_2: {}", day_2::day_2_2(&day_2)}
     Ok(())
 }
 
-fn read_input(path: &str) -> Result<Vec<i32>, Error> {
-    let input = File::open(path)?;
-    let br = BufReader::new(input);
-
-    br.lines()
-        .map(|line| line.and_then(|v| v.parse().map_err(|e| Error::new(ErrorKind::InvalidData, e))))
-        .collect()
-}
