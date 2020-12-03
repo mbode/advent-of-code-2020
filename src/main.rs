@@ -1,6 +1,7 @@
+mod input;
 mod day_1;
 mod day_2;
-mod input;
+mod day_3;
 
 use std::io::Error;
 
@@ -18,6 +19,10 @@ fn main() -> Result<(), Error> {
     let day_2 = input::read_lines("input/day_2")?;
     println! {"day_2_1: {}", day_2::day_2_1(&day_2)}
     println! {"day_2_2: {}", day_2::day_2_2(&day_2)}
+
+    let day_3 = input::read_lines("input/day_3")?;
+    println! {"day_3_1: {}", day_3::day_3_1(&day_3, 3, 1)}
+    println! {"day_3_2: {}", day_3::day_3_2(&day_3)}
     Ok(())
 }
 
