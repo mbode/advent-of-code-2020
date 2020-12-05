@@ -12,8 +12,8 @@ pub fn day_4_1(lines: &[String]) -> usize {
             keys = HashSet::new();
             continue;
         }
-        for part in line.split(" ") {
-            let key_value = part.split(":").collect::<Vec<&str>>();
+        for part in line.split(' ') {
+            let key_value = part.split(':').collect::<Vec<&str>>();
             keys.insert(key_value[0]);
         }
     }
@@ -41,8 +41,8 @@ pub fn day_4_2(lines: &[String]) -> usize {
             current = String::new();
             continue;
         }
-        for part in line.split(" ") {
-            let key_value = part.split(":").collect::<Vec<&str>>();
+        for part in line.split(' ') {
+            let key_value = part.split(':').collect::<Vec<&str>>();
             let key = key_value[0];
             let value = key_value[1];
             match key {
@@ -74,16 +74,16 @@ pub fn day_4_2(lines: &[String]) -> usize {
                     }
                 }
                 "hgt" => {
-                    if value.ends_with("cm") {
-                        if let Ok(n) = value[..value.len() - 2].parse::<isize>() {
+                    if let Some(stripped) = value.strip_suffix("cm") {
+                        if let Ok(n) = stripped.parse::<isize>() {
                             if n < 150 || n > 193 {
                                 continue;
                             }
                         } else {
                             continue;
                         }
-                    } else if value.ends_with("in") {
-                        if let Ok(n) = value[..value.len() - 2].parse::<isize>() {
+                    } else if let Some(stripped) = value.strip_suffix("in") {
+                        if let Ok(n) = stripped.parse::<isize>() {
                             if n < 59 || n > 76 {
                                 continue;
                             }
