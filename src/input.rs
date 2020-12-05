@@ -1,5 +1,5 @@
 use std::fs::File;
-use std::io::{BufReader, BufRead, Error, ErrorKind};
+use std::io::{BufRead, BufReader, Error, ErrorKind};
 
 pub fn read_numbers(path: &str) -> Result<Vec<isize>, Error> {
     let input = File::open(path)?;

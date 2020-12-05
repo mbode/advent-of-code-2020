@@ -14,7 +14,7 @@ pub fn day_3_1(lines: &[String], right: usize, down: usize) -> usize {
 }
 
 pub fn day_3_2(lines: &[String]) -> usize {
-    vec!((1, 1), (3, 1), (5, 1), (7, 1), (1, 2))
+    vec![(1, 1), (3, 1), (5, 1), (7, 1), (1, 2)]
         .iter()
         .map(|(right, down)| day_3_1(lines, *right, *down))
         .product()
@@ -25,7 +25,7 @@ mod tests {
     use crate::day_3::{day_3_1, day_3_2};
 
     fn test_data() -> Vec<String> {
-        vec!(
+        vec![
             String::from("..##......."),
             String::from("#...#...#.."),
             String::from(".#....#..#."),
@@ -37,7 +37,7 @@ mod tests {
             String::from("#.##...#..."),
             String::from("#...##....#"),
             String::from(".#..#...#.#"),
-        )
+        ]
     }
 
     #[test]

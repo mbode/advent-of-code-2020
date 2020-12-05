@@ -1,11 +1,12 @@
-#[macro_use] extern crate lazy_static;
+#[macro_use]
+extern crate lazy_static;
 
-mod input;
 mod day_1;
 mod day_2;
 mod day_3;
 mod day_4;
 mod day_5;
+mod input;
 
 use std::io::Error;
 

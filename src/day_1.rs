@@ -27,7 +27,7 @@ mod tests {
     use crate::day_1::{day_1_1, day_1_2};
 
     fn test_data() -> Vec<isize> {
-        vec!(1721, 979, 366, 299, 675, 1456)
+        vec![1721, 979, 366, 299, 675, 1456]
     }
 
     #[test]

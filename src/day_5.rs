@@ -7,10 +7,9 @@ pub fn day_5_1(lines: &[String]) -> isize {
 pub fn day_5_2(lines: &[String]) -> Option<isize> {
     let seat_ids: HashSet<isize> = lines.iter().map(|line| get_seat_id(line)).collect();
 
-    (0..1023)
-        .find(|i| {
-            seat_ids.contains(&(i - 1)) && !seat_ids.contains(&i) && seat_ids.contains(&(i + 1))
-        })
+    (0..1023).find(|i| {
+        seat_ids.contains(&(i - 1)) && !seat_ids.contains(&i) && seat_ids.contains(&(i + 1))
+    })
 }
 
 fn get_seat_id(line: &str) -> isize {

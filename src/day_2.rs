@@ -17,16 +17,25 @@ impl PasswordPolicy {
     }
 
     fn is_valid_2(&self) -> bool {
-        (self.password.chars().nth(self.min - 1).unwrap() == self.c) ^ (self.password.chars().nth(self.max - 1).unwrap() == self.c)
+        (self.password.chars().nth(self.min - 1).unwrap() == self.c)
+            ^ (self.password.chars().nth(self.max - 1).unwrap() == self.c)
     }
 }
 
 pub fn day_2_1(lines: &[String]) -> usize {
-    lines.iter().filter_map(|line| line.parse::<PasswordPolicy>().ok()).filter(|p| p.is_valid_1()).count()
+    lines
+        .iter()
+        .filter_map(|line| line.parse::<PasswordPolicy>().ok())
+        .filter(|p| p.is_valid_1())
+        .count()
 }
 
 pub fn day_2_2(lines: &[String]) -> usize {
-    lines.iter().filter_map(|line| line.parse::<PasswordPolicy>().ok()).filter(|p| p.is_valid_2()).count()
+    lines
+        .iter()
+        .filter_map(|line| line.parse::<PasswordPolicy>().ok())
+        .filter(|p| p.is_valid_2())
+        .count()
 }
 
 #[cfg(test)]
@@ -34,11 +43,11 @@ mod tests {
     use crate::day_2::{day_2_1, day_2_2};
 
     fn test_data() -> Vec<String> {
-        vec!(
+        vec![
             String::from("1-3 a: abcde"),
             String::from("1-3 b: cdefg"),
             String::from("2-9 c: ccccccccc"),
-        )
+        ]
     }
 
     #[test]
