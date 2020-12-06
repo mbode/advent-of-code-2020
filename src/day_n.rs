@@ -12,9 +12,14 @@ mod tests {
     use crate::day_n::{day_n_1, day_n_2};
 
     fn test_data() -> Vec<String> {
-        vec!(
-            String::from("bla"),
-        )
+        "a
+
+a
+b
+c"
+            .lines()
+            .map(String::from)
+            .collect()
     }
 
     #[test]

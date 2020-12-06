@@ -6,6 +6,7 @@ mod day_2;
 mod day_3;
 mod day_4;
 mod day_5;
+mod day_6;
 mod input;
 
 use std::io::Error;
@@ -36,6 +37,10 @@ fn main() -> Result<(), Error> {
     if let Some(i) = day_5::day_5_2(&day_5) {
         println!("day_5_2: {}", i)
     }
+
+    let day_6 = input::read_lines("input/day_6")?;
+    println! {"day_6_1: {}", day_6::day_6_1(&day_6)}
+    println! {"day_6_2: {}", day_6::day_6_2(&day_6)}
 
     Ok(())
 }
