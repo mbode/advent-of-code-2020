@@ -9,12 +9,13 @@ mod day_5;
 mod day_6;
 mod day_7;
 mod day_8;
+mod day_9;
 mod input;
 
 use std::io::Error;
 
 fn main() -> Result<(), Error> {
-    let day_1 = input::read_numbers("input/day_1")?;
+    let day_1 = input::read_isize("input/day_1")?;
     if let Some(i) = day_1::day_1_1(&day_1) {
         println!("day_1_1: {}", i)
     }
@@ -51,6 +52,11 @@ fn main() -> Result<(), Error> {
     let day_8 = input::read_lines("input/day_8")?;
     println! {"day_8_1: {}", day_8::day_8_1(&day_8)}
     println! {"day_8_2: {}", day_8::day_8_2(&day_8)}
+
+    let day_9 = input::read_usize("input/day_9")?;
+    let day_9_1 = day_9::day_9_1(&day_9, 25).unwrap();
+    println! {"day_9_1: {}", day_9_1}
+    println! {"day_9_2: {}", day_9::day_9_2(&day_9, day_9_1).unwrap()}
 
     Ok(())
 }
