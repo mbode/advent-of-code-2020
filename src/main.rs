@@ -4,6 +4,7 @@ extern crate lazy_static;
 mod day_1;
 mod day_10;
 mod day_11;
+mod day_12;
 mod day_2;
 mod day_3;
 mod day_4;
@@ -67,6 +68,10 @@ fn main() -> Result<(), Error> {
     let day_11 = input::read_lines("input/day_11")?;
     println! {"day_11_1: {}", day_11::day_11_1(&day_11)}
     println! {"day_11_2: {}", day_11::day_11_2(&day_11)}
+
+    let day_12 = input::read_lines("input/day_12")?;
+    println! {"day_12_1: {}", day_12::day_12_1(&day_12)}
+    println! {"day_12_2: {}", day_12::day_12_2(&day_12)}
 
     Ok(())
 }
