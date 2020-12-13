@@ -8,6 +8,7 @@ edition = "2018"
 
 [dependencies]
 lazy_static = "1.4.0"
+num = "0.3.1"
 recap = "0.1.1"
 regex = "1.4.2"
 serde = "1.0.117"
