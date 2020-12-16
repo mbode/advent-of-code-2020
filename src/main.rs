@@ -8,6 +8,7 @@ mod day_12;
 mod day_13;
 mod day_14;
 mod day_15;
+mod day_16;
 mod day_2;
 mod day_3;
 mod day_4;
@@ -21,7 +22,7 @@ mod input;
 use std::io::Error;
 
 fn main() -> Result<(), Error> {
-    let day = 15;
+    let day = 16;
 
     match day {
         1 => {
@@ -102,9 +103,14 @@ fn main() -> Result<(), Error> {
             println! {"day_14_2: {}", day_14::day_14_2(&day_14)}
         }
         15 => {
-            let day_15: Vec<usize> = input::read_usize_one_line("input/day_15")?;
+            let day_15 = input::read_usize_one_line("input/day_15")?;
             println! {"day_15_1: {}", day_15::day_15_1(&day_15)}
             println! {"day_15_2: {}", day_15::day_15_2(&day_15)}
+        }
+        16 => {
+            let day_16 = input::read_lines("input/day_16")?;
+            println! {"day_16_1: {}", day_16::day_16_1(&day_16)}
+            println! {"day_16_2: {}", day_16::day_16_2(&day_16)}
         }
         _ => {}
     }
