@@ -14,6 +14,7 @@ mod day_18;
 mod day_19;
 mod day_2;
 mod day_20;
+mod day_21;
 mod day_3;
 mod day_4;
 mod day_5;
@@ -26,7 +27,7 @@ mod input;
 use std::io::Error;
 
 fn main() -> Result<(), Error> {
-    let day = 20;
+    let day = 21;
 
     match day {
         1 => {
@@ -135,6 +136,11 @@ fn main() -> Result<(), Error> {
             let day_20 = input::read_lines("input/day_20")?;
             println! {"day_20_1: {}", day_20::day_20_1(&day_20)}
             println! {"day_20_2: {}", day_20::day_20_2(&day_20, 2593)}
+        }
+        21 => {
+            let day_21 = input::read_lines("input/day_21")?;
+            println! {"day_21_1: {}", day_21::day_21_1(&day_21)}
+            println! {"day_21_2: {}", day_21::day_21_2(&day_21,)}
         }
         _ => {}
     }
