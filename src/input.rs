@@ -35,3 +35,7 @@ pub fn read_lines(path: &str) -> Result<Vec<String>, Error> {
 
     br.lines().collect()
 }
+
+pub fn read_one_line(path: &str) -> String {
+    String::from(read_lines(path).unwrap()[0].as_str())
+}
