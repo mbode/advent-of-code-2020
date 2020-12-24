@@ -13,6 +13,7 @@ dependencies = [
 name = "aoc2020"
 version = "0.1.0"
 dependencies = [
+ "hex_grid",
  "itertools",
  "lazy_static",
  "num",
@@ -41,6 +42,12 @@ checksum = "f938a4abd5b75fe3737902dbc2e79ca142cc1526827a9e40b829a086758531a9"
 dependencies = [
  "serde",
 ]
+
+[[package]]
+name = "hex_grid"
+version = "0.2.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "3cb20185b971a4eb16f7ae53268b44bc435b05d10770c8a4bda64b4033afda45"
 
 [[package]]
 name = "itertools"
